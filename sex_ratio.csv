@@ -1,0 +1,6 @@
+species,island,male_count,female_count,unknown_count,male_proportion
+Adelie,Torgersen,23,24,5,0.489
+Adelie,Biscoe,22,22,0,0.5
+Adelie,Dream,28,27,1,0.509
+Gentoo,Biscoe,61,58,5,0.513
+Chinstrap,Dream,34,34,0,0.5
