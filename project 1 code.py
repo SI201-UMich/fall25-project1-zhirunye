@@ -204,26 +204,22 @@ def sex_ratio_by_species_and_island(data):
         species = row.get("species")
         island = row.get("island")
         sex = row.get("sex")
-        
-        if not species or species == "" or not island or island == "":
-            continue
             
         key = (species, island)
         if key not in counts_dict:
             counts_dict[key] = {"male_count": 0, "female_count": 0, "unknown_count": 0}
             
-        if sex in (None, "", "NA"):
+        if sex in ("NA"):
             counts_dict[key]["unknown_count"] += 1
             continue
-            
-        sex_str = str(sex).strip().lower()
-        if sex_str == "male":
+        
+        if sex == "male":
             counts_dict[key]["male_count"] += 1
-        elif sex_str == "female":
+        elif sex == "female":
             counts_dict[key]["female_count"] += 1
         else:
             counts_dict[key]["unknown_count"] += 1
-    
+            
     results = []
     for (species, island), counts in counts_dict.items():
         known_total = counts["male_count"] + counts["female_count"]
